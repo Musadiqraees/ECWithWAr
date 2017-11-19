@@ -30,6 +30,7 @@ public class HelloController {
         } else {
             User u = new User(username);
             userRepository.save(u);
+
             return ResponseEntity.ok(String.format("Welcome new User %s!", u.getName()));
         }
     }
