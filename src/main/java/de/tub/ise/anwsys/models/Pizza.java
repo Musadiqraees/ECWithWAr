@@ -73,13 +73,19 @@ public final class Pizza implements Serializable {
 		this.name = name;
 	}
 	
-	public void setPrice(Float price) {
-		this.price = price;
+	public void setPrice(Float price)
+	{
+
+
+			this.price = price;
+
 	}
 	
 	 
 	public void setSize(Size size) {
-		
+
+
+
 		this.size=size;
 		
 	}

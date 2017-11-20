@@ -7,86 +7,85 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+
+
+
 @Entity
 public class OrderPizza implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 4989848317697433933L;
-@Id
-@GeneratedValue(strategy=GenerationType.AUTO)
-Integer id;
-
-Float totalPrice;
-
-String recipient;
-
-ArrayList<OrderItem> orderItems;
-	
-	
-	
-	public OrderPizza() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public OrderPizza(Integer id,ArrayList<OrderItem> orderItems,Float totalPrice,String recipient) {
-		// TODO Auto-generated constructor stub
-		//this.id=id;
-		this.orderItems=orderItems;
-		this.totalPrice=totalPrice;
-		this.recipient=recipient;
-		
-	}
-
+	private static final long serialVersionUID = -6009190778756332608L;
 
 	public Integer getId() {
 		return id;
 	}
 
-
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-
 
 	public Float getTotalPrice() {
 		return totalPrice;
 	}
 
-
+	@Override
+	public String toString() {
+		return "OrderPizza{" +
+				"id=" + id +
+				", totalPrice=" + totalPrice +
+				", recipient='" + recipient + '\'' +
+				", orderItems=" + orderItems +
+				'}';
+	}
 
 	public void setTotalPrice(Float totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 
-
-
 	public String getRecipient() {
 		return recipient;
 	}
-
-
 
 	public void setRecipient(String recipient) {
 		this.recipient = recipient;
 	}
 
-
-
-	public ArrayList<OrderItem> getOrderItems() {
+	public ArrayList<orderPizzaItem> getOrderItems() {
 		return orderItems;
 	}
 
-
-
-	public void setOrderItems(ArrayList<OrderItem> orderItems) {
+	public void setOrderItems(ArrayList<orderPizzaItem> orderItems) {
 		this.orderItems = orderItems;
 	}
-	
-	
-	
+
+	public OrderPizza(Float totalPrice, String recipient, ArrayList<orderPizzaItem> orderItems) {
+
+		this.totalPrice = totalPrice;
+		this.recipient = recipient;
+		this.orderItems = orderItems;
+
+
+	}
+
+
+
+	protected OrderPizza(){
+
+		
+	}
+
+
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
+int id;
+
+Float totalPrice;
+
+String recipient;
+
+ArrayList<orderPizzaItem> orderItems;
 
 }
